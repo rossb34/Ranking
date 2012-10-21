@@ -2,7 +2,7 @@
 # TODO - add functions to rank based on other factors
 
 # The functions defined below depend on functions in the xts and TTR packages
-library(TTR)
+# library(TTR)
 
 RankRB <- function(x){
 	# Computes the rank of an xts object of ranking factors
@@ -16,7 +16,7 @@ RankRB <- function(x){
 	#   (e.g. for ranking asset returns, the asset with the greatest return
 	#    receives a  rank of 1)
 	
-	r <- as.xts(t(apply(-x, 1, rank)))
+	r <- as.xts(t(apply(-x, 1, rank, na.last = "keep")))
 	return(r)
 }
 
