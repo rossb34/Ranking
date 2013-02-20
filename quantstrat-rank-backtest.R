@@ -1,4 +1,4 @@
-# quantstrat-rank.R
+# quantstrat-rank-backtest.R
 
 rm(list=ls())
 
@@ -20,7 +20,7 @@ symbols <- c("XLY", "XLP", "XLE", "AGG", "IVV")
 stock(symbols, currency="USD")
 
 # get data for the symbols
-getSymbols(symbols, from="2012-01-01", to="2012-12-31")
+getSymbols(symbols, from="2005-01-01", to="2012-12-31")
 
 # create an xts object of monthly adjusted close prices
 symbols.close <- monthlyPrices(symbols)
@@ -51,13 +51,13 @@ for(i in 1:length(symbols)) {
 
 # run the backtest
 bt <- qstratRank(symbols=symbols, init.equity=100000, top.N=2,
-                  max.size=1000, max.levels=1)
+                  max.size=1000, max.levels=2)
 
 # get trade stats
-bt.stats <- <-bt$stats
+bt.stats <- bt$stats
 
 # chart of returns
-charts.PerformanceSummary(bt1$returns[,"total"], geometric=FALSE, 
+charts.PerformanceSummary(bt$returns[,"total"], geometric=FALSE, 
                           wealth.index=TRUE, main="Total Performance")
 
 
