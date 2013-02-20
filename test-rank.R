@@ -8,8 +8,8 @@ library(FinancialInstrument)
 
 setwd("/Users/rossbennett/Documents/R Projects/Ranking")
 
-source("/Users/rossbennett/Documents/R Projects/Ranking/r-functions/Rank.R")
-source("/Users/rossbennett/Documents/R Projects/Ranking/r-functions/monthly-fun.R")
+source("/Users/rossbennett/Documents/R Projects/Ranking/rank-functions/Rank.R")
+source("/Users/rossbennett/Documents/R Projects/Ranking/rank-functions/monthly-fun.R")
 
 ##### load data to use for testing #####
 currency("USD")
